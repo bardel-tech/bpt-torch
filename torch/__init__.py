@@ -1,4 +1,4 @@
-__commit__ = "fe8b9ca3fbc22121c6c49535615fccf5145bc64d"
+__commit__ = "c9bfde4ab2ceb4ea85699f54c46c094f8718a4c7"
 __version__ = "0.4.1"
 __build__ = ""
 
@@ -9,7 +9,7 @@ def main():
     patch_all()
     import os
     from datetime import timedelta
-    from gevent import wsgi
+    from gevent import pywsgi as wsgi
     from .collector import PrometheusMetricCollector
 
     class QuietWSGIHandler(wsgi.WSGIHandler):
@@ -17,6 +17,7 @@ def main():
 
         def log_request(self, *args):
             pass
+
     port = int(os.environ["SERVICE_PORT"])
     ttl = timedelta(hours=int(os.environ.get("TORCH_TTL", 24)))
     metrics_prefix = "/metrics"
