@@ -1,4 +1,61 @@
-*.egg-info
+/.metadata
+*_RD.mll
+/resources
+/src/temp
+.settings
+.idea/
+pipeline.log
+
+# python byte code and caches
 *.pyc
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.cache/
+.coverage
+*.orig
+.gitignore_*
+bptmaya/__init__.py
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+#python virtualenv
+.venv
+
+# python disttools
+dist
+*.egg-info
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
 build/
-dist/
+.scannerwork/
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Atom's tags
+.tags
+.tags_swap
+
+# IDE artifacts
+.vscode/
+.project
+.pydevproject
+
+# minishift cache and configs
+/**/.minishift
+
+# minikube cache and configs
+/**/.kube
+
+# helm cache and configs
+/**/.helm

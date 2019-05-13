@@ -1,0 +1,6 @@
+name: "bpt-torch"
+version: "0.4.1"
+assets:
+  /:
+    language: python
+    kind: library
