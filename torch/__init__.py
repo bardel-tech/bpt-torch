@@ -1,5 +1,5 @@
-__commit__ = "c9bfde4ab2ceb4ea85699f54c46c094f8718a4c7"
-__version__ = "0.4.1"
+__commit__ = "fd0d95158dcc5cff8112e184b6a20065b74eba98"
+__version__ = "0.4.2"
 __build__ = ""
 
 
