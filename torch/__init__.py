@@ -1,9 +1,19 @@
-__commit__ = "fd0d95158dcc5cff8112e184b6a20065b74eba98"
-__version__ = "0.4.2"
+__commit__ = "937e7a362d99b4fbb9e59562de7c7dd05f87e1c8"
+__version__ = "0.5.0"
 __build__ = ""
+
+import sentry_sdk
 
 
 def main():
+
+    sentry_sdk.init(
+        "https://7f546ab699de411ea93eecbbb9ee1030:665fc83944cd41759c8b135dbe4a5344@sentry.bardel.ca/12",
+        release="bpttorch@" + __version__,
+        attach_stacktrace=True,
+        send_default_pii=True,
+    )
+
     from gevent.monkey import patch_all
 
     patch_all()
