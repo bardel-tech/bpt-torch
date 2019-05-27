@@ -1,2 +1,3 @@
 WebOb
 gevent
+sentry_sdk
