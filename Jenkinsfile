@@ -23,6 +23,13 @@ pipeline {
         stage('Linux') {
           stages {
 
+            stage('Setup') {
+              steps {
+                sh 'curl -sL https://sentry.io/get-cli/ | bash'
+                sh 'env | sort'
+              }
+            }
+
             stage('Check Merge') {
               steps {
                 sh '''
