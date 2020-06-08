@@ -49,7 +49,7 @@ class MetricsClient(object):
             {"Content-Type": "application/json", "Content-Length": len(data)},
         )
         try:
-            f = urllib2.urlopen(req)
+            f = urllib2.urlopen(req, timeout=2)
         except urllib2.HTTPError as ex:
             message = ex.read()
             ex.close()
