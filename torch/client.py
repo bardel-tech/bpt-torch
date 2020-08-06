@@ -44,7 +44,7 @@ class MetricsClient(object):
 
         data = json.dumps(self.buffer)
         req = urllib2.Request(
-            self.torch_url + "/batch",
+            self.torch_url + "/metrics/batch",
             data,
             {"Content-Type": "application/json", "Content-Length": len(data)},
         )

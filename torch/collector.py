@@ -5,6 +5,7 @@ from .prometheus import Registry, Counter, Gauge, Summary, Histogram
 
 class PrometheusMetricCollector(object):
     def __init__(self, prefix="", ttl=None):
+        self.prefix = prefix
         self.routes = {
             prefix: self.report,
             prefix + "/": self.report,
@@ -47,21 +48,21 @@ class PrometheusMetricCollector(object):
 
         op_list = request.json_body
         for op in op_list:
-            path = op.path
+            path = op["path"]
 
-            if path == "/counter":
+            if path == self.prefix + "/counter":
                 return self._counter(op)
-            if path == "/gauge/inc":
+            if path == self.prefix + "/gauge/inc":
                 return self._gauge_inc(op)
-            if path == "/gauge/dec":
+            if path == self.prefix + "/gauge/dec":
                 return self._gauge_dec(op)
-            if path == "/gauge/set":
+            if path == self.prefix + "/gauge/set":
                 return self._gauge_set(op)
-            if path == "/summary":
+            if path == self.prefix + "/summary":
                 return self._summary(op)
-            if path == "/histogram":
+            if path == self.prefix + "/histogram":
                 return self._histogram(op)
-            if path == "/batch":
+            if path == self.prefix + "/batch":
                 return self._batch(op)
 
         return exc.HTTPOk()
