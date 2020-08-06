@@ -8,7 +8,7 @@ import sentry_sdk
 def main():
 
     sentry_sdk.init(
-        "https://7f546ab699de411ea93eecbbb9ee1030:665fc83944cd41759c8b135dbe4a5344@sentry.bardel.ca/12",
+        "https://7d13d430ec1f446f9cea27f89eb02f7a:39e35c3b5a184fe588e9dbff97f32e63@sentry.bardel.ca/12",
         release="bpttorch@" + __version__,
         attach_stacktrace=True,
         send_default_pii=True,
