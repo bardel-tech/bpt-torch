@@ -14,6 +14,9 @@ with open(os.path.join(here, "requirements.txt"), encoding="utf-8") as f:
 
 version = subprocess.check_output(["dev", "query", "{{.Version}}"])
 
+if type(version).__name__ == 'bytes':
+    version = version.decode('utf8')
+
 
 setup(
     name="bpttorch",

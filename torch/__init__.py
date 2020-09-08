@@ -1,5 +1,5 @@
-__commit__ = "937e7a362d99b4fbb9e59562de7c7dd05f87e1c8"
-__version__ = "0.5.0"
+__commit__ = "928593bf49f65d6b2eb3f2690ed41ec79531c915"
+__version__ = "0.5.3"
 __build__ = ""
 
 import sentry_sdk
