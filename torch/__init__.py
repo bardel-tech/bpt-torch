@@ -1,4 +1,4 @@
-__commit__ = "928593bf49f65d6b2eb3f2690ed41ec79531c915"
+__commit__ = "40ffb71801c9452a77c2e0aa55c2c8e36331fdd6"
 __version__ = "0.5.3"
 __build__ = ""
 
