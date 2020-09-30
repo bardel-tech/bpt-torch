@@ -36,6 +36,7 @@ pipeline {
                 eval "$(dev --no-color --dry-run env python)"
                 dev check-version
                 dev build -a
+                dev build -a --python3
                 dev test
                 '''
               }
